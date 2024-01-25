@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BDC4F979-16B6-48E5-8A61-7BCB03A67AAB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wine.Core</RootNamespace>
+    <AssemblyName>Wine.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.1.24\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Dto\CapacityDto.cs" />
+    <Compile Include="Model\Dto\CategoryDto.cs" />
+    <Compile Include="Model\Dto\MemberDto.cs" />
+    <Compile Include="Model\Dto\OrderDto.cs" />
+    <Compile Include="Model\Dto\OrderItemDto.cs" />
+    <Compile Include="Model\Dto\OriginDto.cs" />
+    <Compile Include="Model\Dto\ProductsDto.cs" />
+    <Compile Include="Model\Dto\StaffDto.cs" />
+    <Compile Include="Model\Dto\StateDto.cs" />
+    <Compile Include="Model\Dto\TasteDto.cs" />
+    <Compile Include="Model\Interfaces\ICapacityRepository.cs" />
+    <Compile Include="Model\Interfaces\ICapacityService.cs" />
+    <Compile Include="Model\Interfaces\ICategoryService.cs" />
+    <Compile Include="Model\Interfaces\ICategoryRepository.cs" />
+    <Compile Include="Model\Interfaces\IDataContainer.cs" />
+    <Compile Include="Model\Interfaces\IDataService.cs" />
+    <Compile Include="Model\Interfaces\IMemberRepository.cs" />
+    <Compile Include="Model\Interfaces\IMemberService.cs" />
+    <Compile Include="Model\Interfaces\IOrderItemRepository.cs" />
+    <Compile Include="Model\Interfaces\IOrderItemService.cs" />
+    <Compile Include="Model\Interfaces\IOrderRepository.cs" />
+    <Compile Include="Model\Interfaces\IOrderService.cs" />
+    <Compile Include="Model\Interfaces\IOriginRepository.cs" />
+    <Compile Include="Model\Interfaces\IOriginService.cs" />
+    <Compile Include="Model\Interfaces\IProductService.cs" />
+    <Compile Include="Model\Interfaces\IProductRepository.cs" />
+    <Compile Include="Model\Interfaces\IStaffRepository.cs" />
+    <Compile Include="Model\Interfaces\IStaffService.cs" />
+    <Compile Include="Model\Interfaces\IStateRepository.cs" />
+    <Compile Include="Model\Interfaces\ITasteRepository.cs" />
+    <Compile Include="Model\Interfaces\ITasteService.cs" />
+    <Compile Include="Model\Repositories\CapacityDapperRepository.cs" />
+    <Compile Include="Model\Repositories\CategoryDapperRepositroy.cs" />
+    <Compile Include="Model\Repositories\MemberDapperRepository.cs" />
+    <Compile Include="Model\Repositories\OrderDapperRepository.cs" />
+    <Compile Include="Model\Repositories\OrderItemDapperRepository.cs" />
+    <Compile Include="Model\Repositories\OriginDapperRepository.cs" />
+    <Compile Include="Model\Repositories\ProductDapperRepository.cs" />
+    <Compile Include="Model\Repositories\StaffDapperRepository.cs" />
+    <Compile Include="Model\Repositories\StateRepository.cs" />
+    <Compile Include="Model\Repositories\TasteDapperRepository.cs" />
+    <Compile Include="Model\Services\CapacityService.cs" />
+    <Compile Include="Model\Services\CategoryService.cs" />
+    <Compile Include="Model\Services\MemberService.cs" />
+    <Compile Include="Model\Services\OrderItemService.cs" />
+    <Compile Include="Model\Services\OrderService.cs" />
+    <Compile Include="Model\Services\OriginService.cs" />
+    <Compile Include="Model\Services\ProductService.cs" />
+    <Compile Include="Model\Services\StaffService.cs" />
+    <Compile Include="Model\Services\TasteService.cs" />
+    <Compile Include="SqlDb.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
